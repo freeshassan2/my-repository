@@ -46,7 +46,7 @@ function myalldaywork (){
       console.log(error); // 'Error!'
     });
   
-    const firstpromise = new promise((resolve, reject)=>{
+    const firstpromise = new Promise((resolve, reject)=>{
       setTimeout(function(){
         if ('Done') {
           resolve('Done');
@@ -55,15 +55,15 @@ function myalldaywork (){
         }
       },1000)
     });
-  promise.then((value){
+  promise.then((value)=>{
       console.log(value);
-    });
-    .catch((error){
+    })
+    .catch((error)=>{
       console.log(error);
     });
   
-  const secondpromise = new Promise(function(resolve, reject) => {
-      setTimeout(function() => {
+  const secondpromise = new Promise(function(resolve, reject)  {
+      setTimeout(() => {
         console.log('you car is crashed');
         if ('done') {
           resolve('done');
@@ -75,7 +75,7 @@ function myalldaywork (){
     
     secondpromise.then((value) => {
       console.log(value);
-    });
+    })
     .catch((error) => {
       console.log(error);
     });
@@ -93,14 +93,14 @@ function myalldaywork (){
     
     farees.then((farees) => {
       console.log(farees);
-    });
+    })
     .catch((error) => {
       console.log(error);
     });
     {
-      name: 'Farees',
-      age: 18,
-      occupation: 'Student',
+      name: 'Farees';
+      age: 18;
+      occupation: 'Student';
     }
     
   function carMaintenance(){
@@ -118,9 +118,9 @@ function myalldaywork (){
       }, 100);
   }
   
-  function carMaintenance (num: number){
-  let promiseObj : Promise<sring> = new Promise (function(resolve, reject){
-      setTimeout(function() => {
+  function carMaintenance2 (num: number){
+  let promiseObj : Promise<string> = new Promise (function(resolve, reject){
+      setTimeout(function() {
           console.log("your car engine was destroyed due to over heating");
           resolve("you must to pay to renew your car engine")
       }, 2000);
@@ -141,10 +141,10 @@ function myalldaywork (){
       return promiseObj;
   }
   
-  const promiseOne + new promiseOne(function(resolve, reject){
+  const promiseOne = new Promise(function(resolve, reject){
       setTimeout(function(){
           console.log('task one is completed..');
-          resolve()
+          resolve('task one is completed..')
       }, 1000)
   })
   
@@ -152,22 +152,22 @@ function myalldaywork (){
           console.log("task 2 is completed...")
   })
   
-  new promise(function(resolve, reject){
+  new Promise(function(resolve, reject){
       setTimeout(function(){
   console.log("aysnc task 2");
-  resolve()
+  resolve("aysnc task 2")
       }, 2000)
   }).then(function(){
   console.log("async 2 denied");
   })
   
-  const promisethree = new Promise(function(){
+  const promisethree = new Promise(function(resolve){
       setTimeout(function(){
           resolve({username: "farees hassan butt", email: "freeshassanbutt2004@gmail.com"})
       },2000)
   })
   
-  promisethree.then(function(usser){
+  promisethree.then(function(user){
       console.log(user);
   })
   
@@ -175,14 +175,14 @@ function myalldaywork (){
       setTimeout(function(){
           let error = true
           if (!error) {
-              resolved({username: "farees", passowrd: "123"})
+              resolve({username: "farees", passowrd: "123"})
           } else {
               reject('error: something gone want wronge with frees')
           }
       }, 1000)
   })
   
-  promisefour.then((user) => {
+  promisefour.then((user:any) => {
       console.log(user);
       return user.username
   }).then ((username)=>{
